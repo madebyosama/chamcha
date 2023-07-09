@@ -1,12 +1,17 @@
 import styles from './card.module.css';
-import Image from 'next/image';
-import Roti from '../../assets/images/roti.png';
+import Image, { StaticImageData } from 'next/image';
 
-export default function Card({ title }: { title: string }) {
+export default function Card({
+  title,
+  image,
+}: {
+  title: string;
+  image: StaticImageData;
+}) {
   return (
     <div className={styles.card}>
       <div className={styles.cardImage}>
-        {<Image src={Roti} alt='Roti' width={160} height={160} />}
+        {<Image src={image} alt='Menu Image' width={160} height={160} />}
       </div>
       <div className={styles.cardTitle}>{title}</div>
       <div className={styles.cardCounter}>
