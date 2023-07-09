@@ -1,5 +1,8 @@
+'use client';
+
 import styles from './card.module.css';
 import Image, { StaticImageData } from 'next/image';
+import { useState } from 'react';
 
 export default function Card({
   title,
@@ -8,6 +11,7 @@ export default function Card({
   title: string;
   image: StaticImageData;
 }) {
+  const [number, setNumber] = useState(1);
   return (
     <div className={styles.card}>
       <div className={styles.cardImage}>
@@ -15,9 +19,25 @@ export default function Card({
       </div>
       <div className={styles.cardTitle}>{title}</div>
       <div className={styles.cardCounter}>
-        <div className={styles.cardMinus}>-</div>
-        <div className={styles.cardCount}>1</div>
-        <div className={styles.cardPlus}>+</div>
+        <div
+          className={styles.cardMinus}
+          onClick={() => (number === 1 ? '' : setNumber(number - 1))}
+        >
+          -
+        </div>
+        <div className={styles.cardCount}>{number}</div>
+        <div
+          className={styles.cardPlus}
+          onClick={() =>
+            title === 'Salan'
+              ? number === 3
+                ? ''
+                : setNumber(number + 1)
+              : setNumber(number + 1)
+          }
+        >
+          +
+        </div>
       </div>
       <button className={styles.cardButton}>Add to Lunch</button>
     </div>
