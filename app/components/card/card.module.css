@@ -32,7 +32,7 @@
   width: 100%;
 }
 
-.cardButton:hover {
+.cardButton:active {
   background-color: #151515;
 }
 
@@ -51,6 +51,7 @@
 
 .cardPlus,
 .cardMinus {
+  cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -65,8 +66,8 @@
   border-radius: 50px;
 }
 
-.cardPlus:hover,
-.cardMinus:hover {
+.cardPlus:active,
+.cardMinus:active {
   cursor: pointer;
   background-color: #d81159;
 }
