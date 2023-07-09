@@ -1,0 +1,64 @@
+.card {
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 180px;
+  border-radius: 32px;
+  padding: 32px;
+}
+
+.cardTitle {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.cardButton {
+  cursor: pointer;
+  background-color: #d81159;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+  border-radius: 32px;
+  padding: 16px;
+  width: 100%;
+}
+
+.cardButton:hover {
+  background-color: #151515;
+}
+
+.cardCounter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  padding: 24px;
+}
+
+.cardCount {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.cardPlus,
+.cardMinus {
+  background-color: #151515;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+}
+
+.cardPlus:hover,
+.cardMinus:hover {
+  cursor: pointer;
+  background-color: #d81159;
+}
