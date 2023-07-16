@@ -7,11 +7,16 @@ import { useState } from 'react';
 export default function Card({
   title,
   image,
+  addToCartFunction,
 }: {
   title: string;
   image: StaticImageData;
+  addToCartFunction: (title: string, number: number) => void;
 }) {
   const [number, setNumber] = useState(1);
+  const handleAddToCart = (title: string, number: number) => {
+    addToCartFunction(title, number);
+  };
   return (
     <div className={styles.card}>
       <div className={styles.cardImage}>
@@ -39,7 +44,12 @@ export default function Card({
           +
         </div>
       </div>
-      <button className={styles.cardButton}>Add to Lunch</button>
+      <button
+        className={styles.cardButton}
+        onClick={() => handleAddToCart(title, number)}
+      >
+        Add to Lunch
+      </button>
     </div>
   );
 }
